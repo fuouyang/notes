@@ -1,23 +1,23 @@
-BeanÊµÀı»¯¹ı³Ì 
+**Beanå®ä¾‹åŒ–è¿‡ç¨‹** 
 https://www.processon.com/view/link/5df87156e4b0cfc88c3c18c5 
 
-springÖĞµ¥ÀıÊµÀıµÄÑ­»·ÒÀÀµ 
+**springä¸­å•ä¾‹å®ä¾‹çš„å¾ªç¯ä¾èµ–** 
 https://www.processon.com/view/link/5df9ce52e4b0c4255ea1a84f 
 
-GenericBeanDefinition 
+**GenericBeanDefinition** 
 https://www.processon.com/view/link/5de5bd08e4b0e2c2989bd941 
 
-BeanDefinitionRegistryPostProcessorºÍBeanFactoryPostProcessor 
+**BeanDefinitionRegistryPostProcessorå’ŒBeanFactoryPostProcessor** 
 https://www.processon.com/view/link/5df4456fe4b051b174b324d0 
 
-<context:component-scan base-package="">½âÎöÁ÷³Ì 
+**<context:component-scan base-package="">è§£ææµç¨‹**
 https://www.processon.com/view/link/5df32724e4b0fa593dfb3db1 
 
-xml½âÎöºÍBeanDefinition·â×°ºËĞÄ·½·¨ refreshBeanFactory() 
+**xmlè§£æå’ŒBeanDefinitionå°è£…æ ¸å¿ƒæ–¹æ³• refreshBeanFactory()**  
 https://www.processon.com/view/link/5de74bc8e4b02996f1db1f67 
 
-Õâ¸öÊÇ´ú×¢ÊÍµÄÔ´Âë 
+**è¿™ä¸ªæ˜¯ä»£æ³¨é‡Šçš„æºç **
 https://github.com/zg-jack/spring-source-nodes.git 
 
-Õâ¸öÊÇspringÀı×Ódemo 
+**è¿™ä¸ªæ˜¯springä¾‹å­demo **
 https://github.com/zg-jack/spring-demo.git
