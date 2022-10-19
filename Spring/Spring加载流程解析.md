@@ -200,10 +200,11 @@ public class AppTest {
      			prepareRefresh();
      
      			// Tell the subclass to refresh the internal bean factory.
-     			// 非常重要的一个方法，
+     			// 非常重要的一个方法，获取beanFacory
      			ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
      
      			// Prepare the bean factory for use in this context.
+     			// 设置beanFacory的一些属性，不是太重要   可以大概看看
      			prepareBeanFactory(beanFactory);
      
      			try {
@@ -684,7 +685,7 @@ public BeanDefinitionHolder parseBeanDefinitionElement(Element ele, @Nullable Be
 	}
 ```
 
-这个方法就是通过标签的各种属性封装为beanDefinition
+这个方法就是通过标签的各种属性封装为beanDefinition并注册到BeanFactory
 
 ```java
 @Nullable
@@ -702,7 +703,25 @@ public BeanDefinitionHolder parseBeanDefinitionElement(Element ele, @Nullable Be
 	}
 ```
 
-自定义标签的解析会不太一样，readerContext.getNamespaceHandlerResolver()会返回
+自定义标签的解析会不太一样，readerContext.getNamespaceHandlerResolver().resolve(namespaceUri)会做以下几个事情：
+
+1. 首先获取到一个DefaultNamespaceHandlerResolver对象，该对象有一个Map<String, Object> handlerMappings变量
+
+2. 调用resolve时Spring会加载所有jar包中META-INF/spring.handlers文件中的内容，封装为Map对象赋值给handlerMappings，然后从该map中拿到参数namespaceUri对应的NamespaceHandler
+
+   META-INF/spring.handlers文件中内容如下格式
+
+   ```
+   http\://www.springframework.org/schema/context=org.springframework.context.config.ContextNamespaceHandler
+   http\://www.springframework.org/schema/jee=org.springframework.ejb.config.JeeNamespaceHandler
+   http\://www.springframework.org/schema/lang=org.springframework.scripting.config.LangNamespaceHandler
+   http\://www.springframework.org/schema/task=org.springframework.scheduling.config.TaskNamespaceHandler
+   http\://www.springframework.org/schema/cache=org.springframework.cache.config.CacheNamespaceHandler
+   ```
+
+3. 再由具体的NamespaceHandler解析对应的XML标签，封装为BeanDifinition对象注册到BeanFactory
+
+
 
 ### AnnotationConfigApplicationContext启动
 
