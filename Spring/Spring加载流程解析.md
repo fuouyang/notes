@@ -721,7 +721,7 @@ public BeanDefinitionHolder parseBeanDefinitionElement(Element ele, @Nullable Be
 
 3. 再由具体的NamespaceHandler解析对应的XML标签，封装为BeanDifinition对象注册到BeanFactory
 
-
+###   invokeBeanFactoryPostProcessors(beanFactory)方法解析
 
 ### AnnotationConfigApplicationContext启动
 
